@@ -5,14 +5,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import {UserLayoutComponent} from './layouts/user-layout/user-layout.component';
 
 const routes: Routes =[
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'auth',
     pathMatch: 'full',
   }, {
-    path: '',
+    path: 'admin',
     component: AdminLayoutComponent,
     children: [
       {
@@ -20,8 +21,18 @@ const routes: Routes =[
         loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
       }
     ]
-  }, {
-    path: '',
+  },
+  {
+    path: 'user',
+    component: UserLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: './layouts/user-layout/user-layout.module#UserLayoutModule'
+      }
+    ]
+  },{
+    path: 'auth',
     component: AuthLayoutComponent,
     children: [
       {
@@ -31,7 +42,7 @@ const routes: Routes =[
     ]
   }, {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: 'auth'
   }
 ];
 
@@ -39,9 +50,11 @@ const routes: Routes =[
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes, {
-      useHash: true
-    })
+    RouterModule.forRoot(routes
+    //   , {
+    //   useHash: true
+    // }
+    )
   ],
   exports: [
   ],

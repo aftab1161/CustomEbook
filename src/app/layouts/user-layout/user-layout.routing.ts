@@ -7,6 +7,11 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 
 export const UserLayoutRoutes: Routes = [
+  {
+    path: '',
+    redirectTo: 'tables',
+    pathMatch: 'full',
+  },
   { path: 'dashboard',      component: DashboardComponent },
   { path: 'user-profile',   component: UserProfileComponent },
   { path: 'tables',         component: TablesComponent },
