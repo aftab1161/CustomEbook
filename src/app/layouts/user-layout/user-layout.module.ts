@@ -7,16 +7,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
 
 
-import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
-import { IconsComponent } from '../../pages/icons/icons.component';
-import { MapsComponent } from '../../pages/maps/maps.component';
-import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
-import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {UserLayoutRoutes} from './user-layout.routing';
 import {UserBooksComponent} from '../../pages/user-books/user-books.component';
 import {UserSearchComponent} from '../../pages/user-search/user-search.component';
-// import { ToastrModule } from 'ngx-toastr';
+// import {MatFormFieldModule} from '@angular/material/form-field';
+// import {MatIconModule} from '@angular/material/icon';
+// import { MatButtonModule} from '@angular/material/button';
+// import {MatInputModule} from '@angular/material/input';
+import {MaterialModule} from '../../material/material.module'
+
 
 @NgModule({
   imports: [
@@ -25,14 +25,14 @@ import {UserSearchComponent} from '../../pages/user-search/user-search.component
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ClipboardModule
+    ClipboardModule,
+    MaterialModule
+    // MatFormFieldModule,
+    // MatIconModule,
+    // MatButtonModule,
+    // MatInputModule,
   ],
   declarations: [
-    DashboardComponent,
-    UserProfileComponent,
-    TablesComponent,
-    IconsComponent,
-    MapsComponent,
     UserBooksComponent,
     UserSearchComponent,
   ]

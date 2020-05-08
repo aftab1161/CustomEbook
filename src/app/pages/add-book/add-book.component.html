@@ -18,7 +18,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-books"></i></span>
                 </div>
-                <input class="form-control" placeholder="Book Name" type="text">
+                <input #bookname class="form-control" placeholder="Book Name" type="text">
               </div>
             </div>
             <div class="form-group">
@@ -26,7 +26,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                 </div>
-                <input class="form-control" placeholder="Email" type="email">
+                <input #authors class="form-control" placeholder="Authors" type="text">
               </div>
             </div>
             <div class="form-group">
@@ -34,12 +34,14 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                 </div>
-                <input class="form-control" placeholder="Password" type="password">
+                <input #isbn class="form-control" placeholder="isbn" type="text">
               </div>
             </div>
 
             <div class="text-center">
-              <button type="button" class="btn btn-primary mt-4">Add Book</button>
+              <button type="button" class="btn btn-primary mt-4" (click)="submit(bookname.value,authors.value,isbn.value,1)">
+              Add Book
+              </button>
             </div>
           </form>
         </div>
