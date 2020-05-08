@@ -6,6 +6,7 @@ import { MapsComponent } from '../../pages/maps/maps.component';
 import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
 import {AddBookComponent} from '../../pages/add-book/add-book.component';
+import {PublisherBooksComponent} from '../../pages/publisher-books/publisher-books.component';
 
 export const AdminLayoutRoutes: Routes = [
   {
@@ -16,6 +17,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'addBook',         component: AddBookComponent },
-    { path: 'icons',          component: IconsComponent },
+    { path: 'publisherBooks',          component: PublisherBooksComponent },
     { path: 'maps',           component: MapsComponent }
 ];

@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
+import { PublisherBooksComponent } from './pages/publisher-books/publisher-books.component';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { AddBookComponent } from './pages/add-book/add-book.component';
     AdminLayoutComponent,
     AuthLayoutComponent,
     UserLayoutComponent,
-    AddBookComponent
+
   ],
   providers: [],
   bootstrap: [AppComponent]
