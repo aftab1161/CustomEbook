@@ -1,0 +1,42 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+<!-- Page content -->
+<span >BOOK ID :{{id}}</span><br/>
+<button mat-button color="warn" (click)="onClick()">
+  <mat-icon>add files</mat-icon>
+  Add files
+</button>
+<input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
+
+<div style=" margin-top: 40px; ">
+  <mat-card style="margin-top:10px; width: 100%;" *ngFor="let obj of files;let i=index;">
+    <mat-card-content>
+      <span id="file-label">{{obj.data.name}}</span>
+      <mat-progress-bar [value]="obj.progress"></mat-progress-bar>
+      <mat-form-field class="example-full-width" style=" margin-right: 40px; ">
+        <mat-label>Topic</mat-label>
+        <input matInput placeholder="Ex. XML schema" name="topic{{i}}" [(ngModel)]="obj.topic">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" style=" margin-right: 40px; ">
+        <mat-label>Keywords</mat-label>
+        <textarea matInput placeholder="Enter comma seperated keywords" name ="keyword{{i}}" [(ngModel)]="obj.keyword"></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" style=" margin-right: 40px; ">
+        <mat-label>Price</mat-label>
+        <textarea matInput placeholder="Price" name ="price{{i}}" [(ngModel)]="obj.price"></textarea>
+      </mat-form-field>
+      <button mat-button color="warn" (click)="onDelete(i)">
+        <mat-icon>delete</mat-icon>
+
+      </button>
+
+
+
+    </mat-card-content>
+  </mat-card>
+
+</div>
+<button mat-button color="warn" (click)="onUpload()" *ngIf="files.length!=0">
+  <mat-icon>publish</mat-icon>
+  Upload
+</button>

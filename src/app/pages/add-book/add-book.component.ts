@@ -3,6 +3,7 @@ import {BookService} from '../../services/book.service';
 import {catchError, map} from 'rxjs/operators';
 import {HttpErrorResponse} from '@angular/common/http';
 import {of} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-book',
@@ -11,7 +12,7 @@ import {of} from 'rxjs';
 })
 export class AddBookComponent implements OnInit {
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -28,7 +29,7 @@ export class AddBookComponent implements OnInit {
       })).subscribe((event: any) => {
       // if (typeof (event) === 'object') {
       console.log(event.body);
-      // this.router.navigate(['/upload',event.body]);
+      this.router.navigate(['/admin/upload', event.body]);
       // }
     });
   }

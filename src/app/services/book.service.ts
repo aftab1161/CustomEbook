@@ -23,4 +23,11 @@ export class BookService {
 
     return this.httpClient.post<any>(this.url + 'bookauthor', JSON.stringify(newBook), httpOptions);
   }
+
+  public upload(formData: FormData) {
+    return this.httpClient.post<any>(this.url + 'upload', formData, {
+      reportProgress: true,
+      observe: 'events'
+    });
+  }
 }

@@ -13,6 +13,9 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AddBookComponent} from '../../pages/add-book/add-book.component';
 import {PublisherBooksComponent} from '../../pages/publisher-books/publisher-books.component';
+import {UserLayoutComponent} from '../user-layout/user-layout.component';
+import {UploadComponent} from '../../pages/upload/upload.component';
+import {MaterialModule} from '../../material/material.module';
 
 
 @NgModule({
@@ -22,13 +25,15 @@ import {PublisherBooksComponent} from '../../pages/publisher-books/publisher-boo
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ClipboardModule
+    ClipboardModule,
+    MaterialModule
   ],
   declarations: [
     // DashboardComponent,
     // UserProfileComponent,
     AddBookComponent,
-    PublisherBooksComponent
+    PublisherBooksComponent,
+    UploadComponent
   ]
 })
 

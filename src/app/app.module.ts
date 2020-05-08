@@ -17,6 +17,8 @@ import { AddBookComponent } from './pages/add-book/add-book.component';
 import { PublisherBooksComponent } from './pages/publisher-books/publisher-books.component';
 import { UserBooksComponent } from './pages/user-books/user-books.component';
 import { UserSearchComponent } from './pages/user-search/user-search.component';
+import { UploadComponent } from './pages/upload/upload.component';
+import {MaterialModule} from './material/material.module';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { UserSearchComponent } from './pages/user-search/user-search.component';
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   declarations: [
     AppComponent,
