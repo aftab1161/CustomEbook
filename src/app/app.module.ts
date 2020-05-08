@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
+import { AddBookComponent } from './pages/add-book/add-book.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { UserLayoutComponent } from './layouts/user-layout/user-layout.component
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    UserLayoutComponent
+    UserLayoutComponent,
+    AddBookComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
