@@ -23,4 +23,8 @@ export class PublisherService {
 
     return this.httpClient.post<any>(this.url + 'publisher', JSON.stringify(publisher), httpOptions);
   }
+
+   public getBooks(publisher_id) {
+     return this.httpClient.get(this.url + 'publisher/book/' + publisher_id);
+  }
 }

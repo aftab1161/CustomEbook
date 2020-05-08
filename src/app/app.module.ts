@@ -19,6 +19,8 @@ import { UserBooksComponent } from './pages/user-books/user-books.component';
 import { UserSearchComponent } from './pages/user-search/user-search.component';
 import { UploadComponent } from './pages/upload/upload.component';
 import {MaterialModule} from './material/material.module';
+import { BuildComponent } from './pages/build/build.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import {MaterialModule} from './material/material.module';
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    DragDropModule
   ],
   declarations: [
     AppComponent,

@@ -30,4 +30,8 @@ export class BookService {
       observe: 'events'
     });
   }
+
+  public search(key) {
+    return this.httpClient.get(this.url + 'keywords/bookComp/' + key);
+  }
 }

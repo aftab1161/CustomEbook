@@ -16,6 +16,8 @@ import {UserSearchComponent} from '../../pages/user-search/user-search.component
 // import { MatButtonModule} from '@angular/material/button';
 // import {MatInputModule} from '@angular/material/input';
 import {MaterialModule} from '../../material/material.module'
+import {UserLayoutComponent} from './user-layout.component';
+import {BuildComponent} from '../../pages/build/build.component';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import {MaterialModule} from '../../material/material.module'
   declarations: [
     UserBooksComponent,
     UserSearchComponent,
+    BuildComponent
   ]
 })
 

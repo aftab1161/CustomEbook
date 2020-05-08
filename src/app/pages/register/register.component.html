@@ -51,7 +51,7 @@
                 <input #password class="form-control" placeholder="Password" type="password">
               </div>
             </div>
-            <mat-slide-toggle  [(ngModel)]="publisher">Publisher</mat-slide-toggle>
+            <mat-slide-toggle  name="publisher" [(ngModel)]="publisher">Publisher</mat-slide-toggle>
             <div class="text-center">
               <button type="button" class="btn btn-primary mt-4" (click)="register(name.value,user_name.value,password.value)">
                 Register
