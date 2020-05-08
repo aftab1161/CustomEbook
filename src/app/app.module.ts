@@ -15,6 +15,8 @@ import { ComponentsModule } from './components/components.module';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import { PublisherBooksComponent } from './pages/publisher-books/publisher-books.component';
+import { UserBooksComponent } from './pages/user-books/user-books.component';
+import { UserSearchComponent } from './pages/user-search/user-search.component';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { PublisherBooksComponent } from './pages/publisher-books/publisher-books
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    UserLayoutComponent,
+    UserLayoutComponent
+
 
   ],
   providers: [],

@@ -14,6 +14,8 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {UserLayoutRoutes} from './user-layout.routing';
+import {UserBooksComponent} from '../../pages/user-books/user-books.component';
+import {UserSearchComponent} from '../../pages/user-search/user-search.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -30,7 +32,9 @@ import {UserLayoutRoutes} from './user-layout.routing';
     UserProfileComponent,
     TablesComponent,
     IconsComponent,
-    MapsComponent
+    MapsComponent,
+    UserBooksComponent,
+    UserSearchComponent,
   ]
 })
 
