@@ -36,4 +36,8 @@ export class UserService {
     }
     return this.httpClient.get(this.url + 'file?' + httpParams.toString());
   }
+
+  getBooks(user_id: number) {
+    return this.httpClient.get(this.url + 'user/ebooks/' + user_id);
+  }
 }
