@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Constants} from '../../variables/constants';
+import {environment} from '../../../environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private url: string = 'api/auth';
+  private url = environment.baseUrl;
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private httpClient: HttpClient) { }
@@ -15,10 +16,10 @@ export class AuthService {
   getToken(): string {
     return localStorage.getItem(Constants.TOKEN);
   }
-  //
-  // setToken(token: string): void {
-  //   localStorage.setItem(this.TOKEN_NAME, token);
-  // }
+
+  setToken(token: string): void {
+    localStorage.setItem(Constants.TOKEN, token);
+  }
   //
   // getTokenExpirationDate(token: string): Date {
   //   const decoded = jwt_decode(token);
@@ -45,6 +46,10 @@ export class AuthService {
   //     .toPromise()
   //     .then(res => res.text());
   // }
+
+  public login(formData: FormData) {
+    return this.httpClient.post<any>(this.url + 'login', formData, {});
+  }
 
 
 }
