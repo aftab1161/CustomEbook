@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Constants} from '../../variables/constants';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,13 +9,12 @@ import {HttpClient} from '@angular/common/http';
 export class AuthService {
   private url: string = 'api/auth';
   private headers = new Headers({ 'Content-Type': 'application/json' });
-  private TOKEN_NAME: string;
 
   constructor(private httpClient: HttpClient) { }
 
-  // getToken(): string {
-  //   return localStorage.getItem(this.TOKEN_NAME);
-  // }
+  getToken(): string {
+    return localStorage.getItem(Constants.TOKEN);
+  }
   //
   // setToken(token: string): void {
   //   localStorage.setItem(this.TOKEN_NAME, token);

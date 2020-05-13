@@ -1,7 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { UploadComponent } from './pages/upload/upload.component';
 import {MaterialModule} from './material/material.module';
 import { BuildComponent } from './pages/build/build.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {AuthInterceptor} from './interceptor/auth.interceptor';
 
 
 @NgModule({
@@ -43,7 +44,13 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
