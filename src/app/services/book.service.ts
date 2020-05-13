@@ -15,8 +15,7 @@ export class BookService {
     const newBook = new Book(book, authors, isbn, publisher_id);
     const httpOptions: { headers; observe; } = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'my-auth-token'
+        'Content-Type':  'application/json'
       }),
       observe : 'response'
     };

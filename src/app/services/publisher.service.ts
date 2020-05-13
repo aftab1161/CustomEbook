@@ -15,8 +15,7 @@ export class PublisherService {
     const publisher = new Publisher(name, user_name, password);
     const httpOptions: { headers; observe; } = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'my-auth-token'
+        'Content-Type':  'application/json'
       }),
       observe : 'response'
     };

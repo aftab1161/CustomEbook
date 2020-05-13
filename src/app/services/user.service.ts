@@ -15,8 +15,7 @@ export class UserService {
     const user = new User(name, user_name, password);
     const httpOptions: { headers; observe; } = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'my-auth-token'
+        'Content-Type':  'application/json'
       }),
       observe : 'response'
     };
