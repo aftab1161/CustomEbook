@@ -11,8 +11,8 @@ export class PublisherService {
   private url = environment.baseUrl;
   constructor(private httpClient: HttpClient) { }
 
-  add(name: string, user_name: string, password: string) {
-    const publisher = new Publisher(name, user_name, password);
+  add(name: string, user_name: string, password: string, roles: string) {
+    const publisher = new Publisher(name, user_name, password, roles);
     const httpOptions: { headers; observe; } = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'

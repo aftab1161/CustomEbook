@@ -1,10 +1,16 @@
 export class Publisher {
   name: string;
-  user_name: string;
+  username: string;
   password: string;
-  constructor(name: string, user_name: string, password: string) {
+  roles: string;
+  address: string;
+  active: number;
+  constructor(name: string, username: string, password: string, roles: string) {
     this.name = name;
-    this.user_name = user_name;
+    this.username = username;
     this.password = password;
+    this.roles = roles;
+    this.address = '';
+    this.active = 1;
   }
 }

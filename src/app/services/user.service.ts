@@ -11,8 +11,8 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
 
-  add(name: string, user_name: string, password: string) {
-    const user = new User(name, user_name, password);
+  add(name: string, user_name: string, password: string, roles: string) {
+    const user = new User(name, user_name, password, roles);
     const httpOptions: { headers; observe; } = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
@@ -38,5 +38,9 @@ export class UserService {
 
   getBooks(user_id: number) {
     return this.httpClient.get(this.url + 'user/ebooks/' + user_id);
+  }
+
+  purchase(id) {
+    return this.httpClient.get(this.url + 'purchase/' + id);
   }
 }

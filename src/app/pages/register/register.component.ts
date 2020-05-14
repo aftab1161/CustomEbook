@@ -14,6 +14,7 @@ import {Router} from '@angular/router';
 export class RegisterComponent implements OnInit {
   publisher: any = false;
 
+
   constructor(
     private publisherService: PublisherService,
     private userService: UserService,
@@ -23,33 +24,41 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  register(name: string, user_name: string, password: string) {
+  register(name: string, username: string, password: string) {
+    let registration = true;
     if (this.publisher) {
-      this.publisherService.add(name, user_name, password).pipe(
+      this.publisherService.add(name, username, password, 'ROLE_ADMIN').pipe(
         map(event => {
           return event;
         }),
         catchError((error: HttpErrorResponse) => {
+          alert('Username already exists');
+          registration = false;
           return of(`${name} registration failed.`);
         })).subscribe((event: any) => {
         // if (typeof (event) === 'object') {
         console.log(event.body);
-        this.router.navigate(['/auth/login']);
+        // this.router.navigate(['/auth/login']);
         // }
       });
     } else {
-      this.userService.add(name, user_name, password).pipe(
+      this.userService.add(name, username, password, 'ROLE_USER').pipe(
         map(event => {
           return event;
         }),
         catchError((error: HttpErrorResponse) => {
+          alert('Username already exists');
+          registration = false;
           return of(`${name} registration failed.`);
         })).subscribe((event: any) => {
         // if (typeof (event) === 'object') {
         console.log(event.body);
-        this.router.navigate(['/auth/login']);
+        // this.router.navigate(['/auth/login']);
         // }
       });
+    }
+    if (registration) {
+      this.router.navigate(['/auth/login']);
     }
   }
 }

@@ -15,8 +15,12 @@ export class UploadComponent implements OnInit {
   // part = new PartModal();
   constructor(private bookService: BookService, private route: ActivatedRoute) { }
   id: string;
+  bookName: any;
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
+    this.bookService.getBook(this.id).subscribe((event: any) => {
+      this.bookName = event.book_name;
+    });
   }
 
   uploadFile(file) {

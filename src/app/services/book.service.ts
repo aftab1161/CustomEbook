@@ -33,4 +33,8 @@ export class BookService {
   public search(key) {
     return this.httpClient.get(this.url + 'keywords/bookComp/' + key);
   }
+
+  public getBook(id) {
+    return this.httpClient.get(this.url + 'book/' + id);
+  }
 }

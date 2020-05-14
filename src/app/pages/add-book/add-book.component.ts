@@ -4,6 +4,7 @@ import {catchError, map} from 'rxjs/operators';
 import {HttpErrorResponse} from '@angular/common/http';
 import {of} from 'rxjs';
 import {Router} from '@angular/router';
+import {Constants} from '../../variables/constants';
 
 @Component({
   selector: 'app-add-book',
@@ -11,16 +12,16 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
-
+  publisherId: any;
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
-
+    this.publisherId = Number(localStorage.getItem(Constants.ID));
   }
 
-  submit(bookname: string, authors: string, isbn: string, publisher_id: number) {
+  submit(bookname: string, authors: string, isbn: string, ) {
     console.log('Console');
-    this.bookService.add(bookname, authors, isbn, publisher_id).pipe(
+    this.bookService.add(bookname, authors, isbn, this.publisherId).pipe(
       map(event => {
         return event;
       }),

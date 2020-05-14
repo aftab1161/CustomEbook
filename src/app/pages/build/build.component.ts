@@ -6,6 +6,7 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {UserService} from '../../services/user.service';
 import {catchError, map} from 'rxjs/operators';
 import {of} from 'rxjs';
+import {Constants} from '../../variables/constants';
 
 @Component({
   selector: 'app-build',
@@ -19,6 +20,7 @@ export class BuildComponent implements OnInit {
   public ids: string;
   public toc: any;
   public downloadLink: string;
+  userId: any;
 
   constructor(
     private userService: UserService,
@@ -29,6 +31,7 @@ export class BuildComponent implements OnInit {
 
   ngOnInit(): void {
     this.selected = this.sharedData.sharedData;
+    this.userId = Number(localStorage.getItem(Constants.ID));
     console.log('build');
     console.log(this.selected);
   }
@@ -47,7 +50,7 @@ export class BuildComponent implements OnInit {
     // this.downloadLink = 'localhost:8091/file?';
     // this.downloadLink = this.downloadLink + httpParams.toString();
     // console.log(this.downloadLink);
-    this.userService.addBook(11, this.ids, ebookname, generatedby, this.toc).pipe(
+    this.userService.addBook(this.userId, this.ids, ebookname, generatedby, this.toc).pipe(
       map(event => {
         return event;
       }),

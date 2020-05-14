@@ -23,7 +23,11 @@ export class UserSearchComponent implements OnInit {
     this.bookService.search(key).subscribe((event: any) => {
       console.log(event);
       this.components = event;
+      if (this.components.length == 0) {
+        alert('NO match found');
+      }
     });
+
   }
   onBuild() {
     console.log(this.components);

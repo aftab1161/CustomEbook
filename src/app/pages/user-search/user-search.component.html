@@ -24,9 +24,14 @@
   </div>
   <div class="centre-fifty">
     <mat-card style=" width: 100%; margin-top: 1em" *ngFor="let obj of components;let i=index;">
-      <mat-card-content>
+      <mat-card-header>
         <mat-checkbox class="example-margin" [(ngModel)]="obj.isSelected"></mat-checkbox>
-        <span id="file-label">{{obj.component_name}}</span>
+        <span style="margin-left: 3em; font-weight: bold" id="file-label">{{obj.component_name}}</span>
+      </mat-card-header>
+      <mat-card-content>
+        Book: {{obj.book.book_name}}<br/>
+        Publisher: {{obj.book.publisher.name}}<br/>
+        Price: {{obj.price}}
       </mat-card-content>
     </mat-card>
 

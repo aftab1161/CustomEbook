@@ -47,9 +47,35 @@ export class AuthService {
   //     .then(res => res.text());
   // }
 
-  public login(formData: FormData) {
-    return this.httpClient.post<any>(this.url + 'login', formData, {});
+  public login(formData: FormData, publisher: any) {
+    if  (publisher) {
+      return this.httpClient.post<any>(this.url + 'publisherlogin', formData, {});
+    } else {
+      return this.httpClient.post<any>(this.url + 'login', formData, {});
+    }
   }
 
 
+
+
+  userType() {
+    return Constants.USER;
+  }
+
+  setUser(username: string) {
+    localStorage.setItem(Constants.CURRENT_USER, username);
+  }
+
+  setPublisher(username: string) {
+    localStorage.setItem(Constants.CURRENT_PUBLISHER, username);
+  }
+
+  logout() {
+    localStorage.clear();
+  }
+
+  setDetails(id: any, name: any) {
+    localStorage.setItem(Constants.ID, id);
+    localStorage.setItem(Constants.NAME, name);
+  }
 }
