@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {BookService} from '../../services/book.service';
 import {Router} from '@angular/router';
 import {DataService} from '../../services/data.service';
+import {catchError, map} from 'rxjs/operators';
+import {HttpErrorResponse} from '@angular/common/http';
+import {of} from 'rxjs';
 
 @Component({
   selector: 'app-user-search',
@@ -20,12 +23,16 @@ export class UserSearchComponent implements OnInit {
 
 
   onSearch(key) {
-    this.bookService.search(key).subscribe((event: any) => {
-      console.log(event);
-      this.components = event;
-      if (this.components.length == 0) {
+    this.components = [];
+    this.bookService.search(key).pipe(
+      map(event => {
+        return event;
+      }),
+      catchError((error: HttpErrorResponse) => {
         alert('NO match found');
-      }
+        return of(`no match`);
+      })).subscribe((event: any) => {
+      this.components = event;
     });
 
   }
