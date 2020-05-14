@@ -8,31 +8,31 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0">
-          <h3 class="mb-0">My Books</h3>
+          <h3 class="mb-0">Book: {{book_name}}</h3>
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
             <tr>
-              <th scope="col">Book Id</th>
-              <th scope="col">Book Name</th>
-              <th scope="col">ISBN</th>
+<!--              <th scope="col">Component Id</th>-->
+              <th scope="col">Component Name</th>
+              <th scope="col">Price</th>
               <!--                <th scope="col">Users</th>-->
               <!--                <th scope="col">Completion</th>-->
-              <th scope="col"></th>
+<!--              <th scope="col"></th>-->
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let book of books">
-              <td> {{book.id}} </td>
-              <td> <a routerLink="/admin/bookDetail/{{book.id}}">{{book.book_name}} </a></td>
-              <td> {{book.isbn}} </td>
-              <td>
-                <button mat-button color="warn" (click)="upload(book.id)">
-                  <mat-icon>add files</mat-icon>
-                  Add files
-                </button>
-              </td>
+            <tr *ngFor="let component of components">
+<!--              <td> {{component.id}} </td>-->
+              <td> {{component.component_name}} </td>
+              <td> {{component.price}} </td>
+<!--              <td>-->
+<!--                <button mat-button color="warn" (click)="upload(book.id)">-->
+<!--                  <mat-icon>add files</mat-icon>-->
+<!--                  Add files-->
+<!--                </button>-->
+<!--              </td>-->
             </tr>
 
             </tbody>

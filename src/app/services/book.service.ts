@@ -37,4 +37,8 @@ export class BookService {
   public getBook(id) {
     return this.httpClient.get(this.url + 'book/' + id);
   }
+
+  getComponents(id: string) {
+    return this.httpClient.get(this.url + 'book/bookComponents/' + id);
+  }
 }

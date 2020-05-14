@@ -22,6 +22,7 @@ import {MaterialModule} from './material/material.module';
 import { BuildComponent } from './pages/build/build.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {AuthInterceptor} from './interceptor/auth.interceptor';
+import { BookDetailComponent } from './pages/book-detail/book-detail.component';
 
 
 @NgModule({

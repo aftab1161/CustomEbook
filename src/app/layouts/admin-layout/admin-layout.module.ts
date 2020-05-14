@@ -16,6 +16,7 @@ import {PublisherBooksComponent} from '../../pages/publisher-books/publisher-boo
 import {UserLayoutComponent} from '../user-layout/user-layout.component';
 import {UploadComponent} from '../../pages/upload/upload.component';
 import {MaterialModule} from '../../material/material.module';
+import {BookDetailComponent} from '../../pages/book-detail/book-detail.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {MaterialModule} from '../../material/material.module';
     // UserProfileComponent,
     AddBookComponent,
     PublisherBooksComponent,
-    UploadComponent
+    UploadComponent,
+    BookDetailComponent
   ]
 })
 
