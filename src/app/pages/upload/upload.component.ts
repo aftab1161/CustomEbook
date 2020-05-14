@@ -16,6 +16,7 @@ export class UploadComponent implements OnInit {
   constructor(private bookService: BookService, private route: ActivatedRoute) { }
   id: string;
   bookName: any;
+  uploadButton = true;
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.bookService.getBook(this.id).subscribe((event: any) => {
@@ -39,6 +40,8 @@ export class UploadComponent implements OnInit {
             file.progress = Math.round(event.loaded * 100 / event.total);
             break;
           case HttpEventType.Response:
+            file.complete = true;
+            console.log(file);
             return event;
         }
       }),
@@ -69,7 +72,7 @@ export class UploadComponent implements OnInit {
         // this.part.keyword="";
         // this.part.topic = "";
         // this.part.
-        this.files.push({ data: file, inProgress: false, progress: 0, keyword: '', topic: ''});
+        this.files.push({ data: file, inProgress: false, progress: 0, keyword: '', topic: '', complete: false});
       }
 
     };
@@ -82,6 +85,7 @@ export class UploadComponent implements OnInit {
   }
 
   onUpload() {
+    this.uploadButton = false;
     this.uploadFiles();
   }
 

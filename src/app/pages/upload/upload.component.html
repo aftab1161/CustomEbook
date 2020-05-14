@@ -3,7 +3,7 @@
 <!-- Page content -->
 <!--<span >BOOK ID :{{id}} </span><br/>-->
 <p style="font-weight: bold">Book: {{bookName}}</p>
-<button mat-button color="warn" (click)="onClick()">
+<button mat-button color="warn" (click)="onClick()" *ngIf="uploadButton">
   <mat-icon>add files</mat-icon>
   Add files
 </button>
@@ -26,10 +26,10 @@
         <mat-label>Price</mat-label>
         <textarea matInput placeholder="Price" name ="price{{i}}" [(ngModel)]="obj.price"></textarea>
       </mat-form-field>
-      <button mat-button color="warn" (click)="onDelete(i)">
+      <button mat-button color="warn" (click)="onDelete(i)" *ngIf="!obj.complete">
         <mat-icon>delete</mat-icon>
-
       </button>
+      <mat-label *ngIf="obj.complete">UPLOADED</mat-label>
 
 
 
@@ -37,7 +37,7 @@
   </mat-card>
 
 </div>
-<button mat-button color="warn" (click)="onUpload()" *ngIf="files.length!=0">
+<button mat-button color="warn" (click)="onUpload()" *ngIf="files.length!=0 && uploadButton">
   <mat-icon>publish</mat-icon>
   Upload
 </button>

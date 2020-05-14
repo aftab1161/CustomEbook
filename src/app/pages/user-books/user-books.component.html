@@ -37,14 +37,14 @@
               </td>
               <td *ngIf="book.status == 3">
                 <button mat-button color="warn" (click)="download(book.id)">
-                  <mat-icon>add files</mat-icon>
+                  <mat-icon>get_app</mat-icon>
                   Download
                 </button>
               </td>
               <td *ngIf="book.status != 3">
                 <button mat-button color="warn" (click)="buy(book.id)">
-                  <mat-icon>add files</mat-icon>
-                  Buy
+                  <mat-icon>shopping_basket</mat-icon>
+                   Buy
                 </button>
               </td>
             </tr>
